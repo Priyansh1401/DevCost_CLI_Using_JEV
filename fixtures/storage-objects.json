@@ -1,0 +1,7 @@
+{
+  "objects": [
+    { "key": "builds/old-bundle.zip", "sizeBytes": 450000000, "lastAccessed": "2024-01-01T00:00:00Z", "contentHash": "abc" },
+    { "key": "builds/copy-bundle.zip", "sizeBytes": 450000000, "lastAccessed": "2024-01-02T00:00:00Z", "contentHash": "abc" },
+    { "key": "assets/logo.png", "sizeBytes": 120000, "linkedResourceId": "asset_123" }
+  ]
+}
