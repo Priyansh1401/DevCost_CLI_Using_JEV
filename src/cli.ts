@@ -8,6 +8,7 @@ import { CloudStorageClassifier } from "./modules/cloud-storage-classifier.js";
 import { LogScanner } from "./modules/log-scanner.js";
 import { TokenWasteClassifier } from "./modules/token-waste-classifier.js";
 import { DevCostReporter, summaryRows } from "./report.js";
+import { UserFacingError } from "./git-utils.js";
 
 const program = new Command().name("devcost").description("Find avoidable AI API spend.").version("0.1.0");
 
@@ -64,4 +65,7 @@ program.command("report")
 
 function printTable(title: string, rows: Record<string, unknown>[]): void { console.log(`\n${title}`); console.table(rows); }
 
-program.parseAsync();
+program.parseAsync().catch((error: unknown) => {
+  console.error(error instanceof UserFacingError ? error.message : `Error: ${error instanceof Error ? error.message : String(error)}`);
+  process.exitCode = 1;
+});

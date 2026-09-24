@@ -1,0 +1,1385 @@
+{
+  "summary": {
+    "generatedAt": "2026-09-22T09:03:56.434Z",
+    "totalFlaggedItems": 29,
+    "flaggedItems": {
+      "tokenWaste": 0,
+      "codeArtifacts": 26,
+      "storageObjects": 3
+    },
+    "estimatedSavingsUsd": {
+      "llmWaste": 0,
+      "storage": 0,
+      "total": 0
+    },
+    "decisionBreakdown": {
+      "total": 32,
+      "jevOnly": 0,
+      "escalatedToClaude": 0,
+      "unclassified": 32,
+      "jevResolutionRate": 0
+    }
+  },
+  "logEvents": [
+    {
+      "id": "req_001",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "prompt": "Write unit tests for the payment service",
+      "inputTokens": 300,
+      "outputTokens": 900,
+      "totalTokens": 1200,
+      "timestamp": "2026-09-20T09:00:00.000Z",
+      "associatedFile": "src/payment.ts",
+      "commitSha": "abc123",
+      "source": "json",
+      "rawMetadata": {
+        "id": "req_001",
+        "provider": "openai",
+        "model": "gpt-4.1",
+        "prompt": "Write unit tests for the payment service",
+        "input_tokens": 300,
+        "output_tokens": 900,
+        "timestamp": "2026-09-20T09:00:00Z",
+        "file_path": "src/payment.ts",
+        "commit_sha": "abc123",
+        "gitFiles": [
+          ".env.example",
+          ".gitignore",
+          "README.md",
+          "devcost.config.json",
+          "fixtures/storage-objects.json",
+          "fixtures/usage-events.json",
+          "package-lock.json",
+          "package.json",
+          "src/cli.ts",
+          "src/clients/api-clients.test.ts",
+          "src/clients/jev-client.ts",
+          "src/clients/llm-client.ts",
+          "src/clients/mock-llm-client.ts",
+          "src/decision-log.ts",
+          "src/modules/cloud-storage-classifier.test.ts",
+          "src/modules/cloud-storage-classifier.ts",
+          "src/modules/code-artifact-classifier.test.ts",
+          "src/modules/code-artifact-classifier.ts",
+          "src/modules/log-scanner.test.ts",
+          "src/modules/log-scanner.ts",
+          "src/modules/token-waste-classifier.test.ts",
+          "src/modules/token-waste-classifier.ts",
+          "src/report.test.ts",
+          "src/report.ts",
+          "src/types.ts",
+          "tsconfig.json"
+        ]
+      }
+    },
+    {
+      "id": "req_002",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "prompt": "Write unit tests for the payment service",
+      "inputTokens": 310,
+      "outputTokens": 920,
+      "totalTokens": 1230,
+      "timestamp": "2026-09-20T09:05:00.000Z",
+      "associatedFile": "src/payment.ts",
+      "commitSha": "abc123",
+      "source": "json",
+      "rawMetadata": {
+        "id": "req_002",
+        "provider": "openai",
+        "model": "gpt-4.1",
+        "prompt": "Write unit tests for the payment service",
+        "input_tokens": 310,
+        "output_tokens": 920,
+        "timestamp": "2026-09-20T09:05:00Z",
+        "file_path": "src/payment.ts",
+        "commit_sha": "abc123",
+        "gitFiles": [
+          ".env.example",
+          ".gitignore",
+          "README.md",
+          "devcost.config.json",
+          "fixtures/storage-objects.json",
+          "fixtures/usage-events.json",
+          "package-lock.json",
+          "package.json",
+          "src/cli.ts",
+          "src/clients/api-clients.test.ts",
+          "src/clients/jev-client.ts",
+          "src/clients/llm-client.ts",
+          "src/clients/mock-llm-client.ts",
+          "src/decision-log.ts",
+          "src/modules/cloud-storage-classifier.test.ts",
+          "src/modules/cloud-storage-classifier.ts",
+          "src/modules/code-artifact-classifier.test.ts",
+          "src/modules/code-artifact-classifier.ts",
+          "src/modules/log-scanner.test.ts",
+          "src/modules/log-scanner.ts",
+          "src/modules/token-waste-classifier.test.ts",
+          "src/modules/token-waste-classifier.ts",
+          "src/report.test.ts",
+          "src/report.ts",
+          "src/types.ts",
+          "tsconfig.json"
+        ]
+      }
+    },
+    {
+      "id": "req_003",
+      "provider": "anthropic",
+      "model": "claude-sonnet",
+      "prompt": "Explain the authorization middleware",
+      "inputTokens": 120,
+      "outputTokens": 400,
+      "totalTokens": 520,
+      "timestamp": "2026-09-20T10:00:00.000Z",
+      "associatedFile": "src/auth.ts",
+      "commitSha": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+      "source": "json",
+      "rawMetadata": {
+        "id": "req_003",
+        "provider": "anthropic",
+        "model": "claude-sonnet",
+        "prompt": "Explain the authorization middleware",
+        "input_tokens": 120,
+        "output_tokens": 400,
+        "timestamp": "2026-09-20T10:00:00Z",
+        "file_path": "src/auth.ts",
+        "gitFiles": [
+          ".env.example",
+          ".gitignore",
+          "README.md",
+          "devcost.config.json",
+          "fixtures/storage-objects.json",
+          "fixtures/usage-events.json",
+          "package-lock.json",
+          "package.json",
+          "src/cli.ts",
+          "src/clients/api-clients.test.ts",
+          "src/clients/jev-client.ts",
+          "src/clients/llm-client.ts",
+          "src/clients/mock-llm-client.ts",
+          "src/decision-log.ts",
+          "src/modules/cloud-storage-classifier.test.ts",
+          "src/modules/cloud-storage-classifier.ts",
+          "src/modules/code-artifact-classifier.test.ts",
+          "src/modules/code-artifact-classifier.ts",
+          "src/modules/log-scanner.test.ts",
+          "src/modules/log-scanner.ts",
+          "src/modules/token-waste-classifier.test.ts",
+          "src/modules/token-waste-classifier.ts",
+          "src/report.test.ts",
+          "src/report.ts",
+          "src/types.ts",
+          "tsconfig.json"
+        ]
+      }
+    }
+  ],
+  "tokenWaste": {
+    "analyzedEvents": 3,
+    "decisions": [
+      {
+        "eventId": "req_001",
+        "classification": "unclassified",
+        "confidence": 0
+      },
+      {
+        "eventId": "req_002",
+        "classification": "unclassified",
+        "confidence": 0
+      },
+      {
+        "eventId": "req_003",
+        "classification": "unclassified",
+        "confidence": 0
+      }
+    ],
+    "flags": [],
+    "estimatedSavingsUsd": 0
+  },
+  "codeArtifacts": {
+    "scannedAiTouchedFiles": 26,
+    "results": [
+      {
+        "metadata": {
+          "path": ".env.example",
+          "sizeBytes": 267,
+          "lastModified": "2026-09-22T08:14:17.065Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": ".gitignore",
+          "sizeBytes": 35,
+          "lastModified": "2026-09-22T07:55:53.467Z",
+          "referenceCount": 65,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "README.md",
+          "sizeBytes": 3320,
+          "lastModified": "2026-09-22T08:25:05.867Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "devcost.config.json",
+          "sizeBytes": 62,
+          "lastModified": "2026-09-22T08:07:19.847Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "fixtures/storage-objects.json",
+          "sizeBytes": 363,
+          "lastModified": "2026-09-22T08:08:03.786Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "fixtures/usage-events.json",
+          "sizeBytes": 767,
+          "lastModified": "2026-09-22T07:57:04.385Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "package-lock.json",
+          "sizeBytes": 53801,
+          "lastModified": "2026-09-22T08:24:39.377Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "package.json",
+          "sizeBytes": 570,
+          "lastModified": "2026-09-22T07:55:52.900Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/cli.ts",
+          "sizeBytes": 5515,
+          "lastModified": "2026-09-22T08:25:04.571Z",
+          "referenceCount": 13,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/clients/api-clients.test.ts",
+          "sizeBytes": 2153,
+          "lastModified": "2026-09-22T08:14:25.536Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/clients/jev-client.ts",
+          "sizeBytes": 6254,
+          "lastModified": "2026-09-22T08:13:44.768Z",
+          "referenceCount": 8,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/clients/llm-client.ts",
+          "sizeBytes": 3552,
+          "lastModified": "2026-09-22T08:13:45.052Z",
+          "referenceCount": 7,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/clients/mock-llm-client.ts",
+          "sizeBytes": 408,
+          "lastModified": "2026-09-22T08:07:19.258Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/decision-log.ts",
+          "sizeBytes": 840,
+          "lastModified": "2026-09-22T07:55:55.254Z",
+          "referenceCount": 5,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/cloud-storage-classifier.test.ts",
+          "sizeBytes": 1594,
+          "lastModified": "2026-09-22T08:08:39.191Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/cloud-storage-classifier.ts",
+          "sizeBytes": 4544,
+          "lastModified": "2026-09-22T08:14:16.518Z",
+          "referenceCount": 3,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/code-artifact-classifier.test.ts",
+          "sizeBytes": 3386,
+          "lastModified": "2026-09-22T08:58:20.568Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 2,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/code-artifact-classifier.ts",
+          "sizeBytes": 6597,
+          "lastModified": "2026-09-22T08:58:19.913Z",
+          "referenceCount": 3,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 2,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/log-scanner.test.ts",
+          "sizeBytes": 1400,
+          "lastModified": "2026-09-22T07:57:26.820Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/log-scanner.ts",
+          "sizeBytes": 6196,
+          "lastModified": "2026-09-22T07:57:03.309Z",
+          "referenceCount": 3,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/token-waste-classifier.test.ts",
+          "sizeBytes": 1702,
+          "lastModified": "2026-09-22T07:57:27.090Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/token-waste-classifier.ts",
+          "sizeBytes": 3233,
+          "lastModified": "2026-09-22T08:24:24.348Z",
+          "referenceCount": 3,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/report.test.ts",
+          "sizeBytes": 2793,
+          "lastModified": "2026-09-22T08:25:05.214Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/report.ts",
+          "sizeBytes": 4500,
+          "lastModified": "2026-09-22T08:25:03.952Z",
+          "referenceCount": 2,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/types.ts",
+          "sizeBytes": 3732,
+          "lastModified": "2026-09-22T08:24:23.629Z",
+          "referenceCount": 10,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "tsconfig.json",
+          "sizeBytes": 395,
+          "lastModified": "2026-09-22T07:55:53.184Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      }
+    ],
+    "flaggedFiles": [
+      {
+        "metadata": {
+          "path": ".env.example",
+          "sizeBytes": 267,
+          "lastModified": "2026-09-22T08:14:17.065Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": ".gitignore",
+          "sizeBytes": 35,
+          "lastModified": "2026-09-22T07:55:53.467Z",
+          "referenceCount": 65,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "README.md",
+          "sizeBytes": 3320,
+          "lastModified": "2026-09-22T08:25:05.867Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "devcost.config.json",
+          "sizeBytes": 62,
+          "lastModified": "2026-09-22T08:07:19.847Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "fixtures/storage-objects.json",
+          "sizeBytes": 363,
+          "lastModified": "2026-09-22T08:08:03.786Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "fixtures/usage-events.json",
+          "sizeBytes": 767,
+          "lastModified": "2026-09-22T07:57:04.385Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "package-lock.json",
+          "sizeBytes": 53801,
+          "lastModified": "2026-09-22T08:24:39.377Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "package.json",
+          "sizeBytes": 570,
+          "lastModified": "2026-09-22T07:55:52.900Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/cli.ts",
+          "sizeBytes": 5515,
+          "lastModified": "2026-09-22T08:25:04.571Z",
+          "referenceCount": 13,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/clients/api-clients.test.ts",
+          "sizeBytes": 2153,
+          "lastModified": "2026-09-22T08:14:25.536Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/clients/jev-client.ts",
+          "sizeBytes": 6254,
+          "lastModified": "2026-09-22T08:13:44.768Z",
+          "referenceCount": 8,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/clients/llm-client.ts",
+          "sizeBytes": 3552,
+          "lastModified": "2026-09-22T08:13:45.052Z",
+          "referenceCount": 7,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/clients/mock-llm-client.ts",
+          "sizeBytes": 408,
+          "lastModified": "2026-09-22T08:07:19.258Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/decision-log.ts",
+          "sizeBytes": 840,
+          "lastModified": "2026-09-22T07:55:55.254Z",
+          "referenceCount": 5,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/cloud-storage-classifier.test.ts",
+          "sizeBytes": 1594,
+          "lastModified": "2026-09-22T08:08:39.191Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/cloud-storage-classifier.ts",
+          "sizeBytes": 4544,
+          "lastModified": "2026-09-22T08:14:16.518Z",
+          "referenceCount": 3,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/code-artifact-classifier.test.ts",
+          "sizeBytes": 3386,
+          "lastModified": "2026-09-22T08:58:20.568Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 2,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/code-artifact-classifier.ts",
+          "sizeBytes": 6597,
+          "lastModified": "2026-09-22T08:58:19.913Z",
+          "referenceCount": 3,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 2,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/log-scanner.test.ts",
+          "sizeBytes": 1400,
+          "lastModified": "2026-09-22T07:57:26.820Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/log-scanner.ts",
+          "sizeBytes": 6196,
+          "lastModified": "2026-09-22T07:57:03.309Z",
+          "referenceCount": 3,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/token-waste-classifier.test.ts",
+          "sizeBytes": 1702,
+          "lastModified": "2026-09-22T07:57:27.090Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/modules/token-waste-classifier.ts",
+          "sizeBytes": 3233,
+          "lastModified": "2026-09-22T08:24:24.348Z",
+          "referenceCount": 3,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/report.test.ts",
+          "sizeBytes": 2793,
+          "lastModified": "2026-09-22T08:25:05.214Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/report.ts",
+          "sizeBytes": 4500,
+          "lastModified": "2026-09-22T08:25:03.952Z",
+          "referenceCount": 2,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "src/types.ts",
+          "sizeBytes": 3732,
+          "lastModified": "2026-09-22T08:24:23.629Z",
+          "referenceCount": 10,
+          "isReferenced": true,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      },
+      {
+        "metadata": {
+          "path": "tsconfig.json",
+          "sizeBytes": 395,
+          "lastModified": "2026-09-22T07:55:53.184Z",
+          "referenceCount": 0,
+          "isReferenced": false,
+          "aiCommitShas": [
+            "f6b575b4e76ffa5867cece22b960cbb8f642c755"
+          ],
+          "blame": {
+            "commitCount": 1,
+            "latestCommit": "f6b575b4e76ffa5867cece22b960cbb8f642c755",
+            "latestAuthor": "Priyansh Aggarwal"
+          }
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "escalated": false
+      }
+    ]
+  },
+  "storage": {
+    "scannedObjects": 3,
+    "results": [
+      {
+        "object": {
+          "key": "builds/old-bundle.zip",
+          "sizeBytes": 450000000,
+          "lastAccessed": "2024-01-01T00:00:00Z",
+          "contentHash": "abc"
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "estimatedMonthlySavingsUsd": 0,
+        "escalated": false
+      },
+      {
+        "object": {
+          "key": "builds/copy-bundle.zip",
+          "sizeBytes": 450000000,
+          "lastAccessed": "2024-01-02T00:00:00Z",
+          "contentHash": "abc"
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "estimatedMonthlySavingsUsd": 0,
+        "escalated": false
+      },
+      {
+        "object": {
+          "key": "assets/logo.png",
+          "sizeBytes": 120000,
+          "linkedResourceId": "asset_123"
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "estimatedMonthlySavingsUsd": 0,
+        "escalated": false
+      }
+    ],
+    "flaggedObjects": [
+      {
+        "object": {
+          "key": "builds/old-bundle.zip",
+          "sizeBytes": 450000000,
+          "lastAccessed": "2024-01-01T00:00:00Z",
+          "contentHash": "abc"
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "estimatedMonthlySavingsUsd": 0,
+        "escalated": false
+      },
+      {
+        "object": {
+          "key": "builds/copy-bundle.zip",
+          "sizeBytes": 450000000,
+          "lastAccessed": "2024-01-02T00:00:00Z",
+          "contentHash": "abc"
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "estimatedMonthlySavingsUsd": 0,
+        "escalated": false
+      },
+      {
+        "object": {
+          "key": "assets/logo.png",
+          "sizeBytes": 120000,
+          "linkedResourceId": "asset_123"
+        },
+        "classification": "unclassified",
+        "confidence": 0,
+        "rationale": "Jev unavailable after 3 attempt(s): Jev HTTP 401",
+        "estimatedMonthlySavingsUsd": 0,
+        "escalated": false
+      }
+    ],
+    "estimatedMonthlySavingsUsd": 0
+  }
+}

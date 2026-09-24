@@ -1,13 +1,19 @@
-import { execFileSync } from "node:child_process";
 import { readdir, readFile, stat } from "node:fs/promises";
 import { basename, relative, resolve } from "node:path";
+import { assertLocalGitRepository, runGitCommand } from "../git-utils.js";
 import type { JevClient } from "../clients/jev-client.js";
 import type { LlmClient } from "../clients/llm-client.js";
 import type { DecisionLog } from "../decision-log.js";
 import type { CodeArtifactDecision, CodeArtifactMetadata, CodeArtifactResult, CodeCleanupReport, GitBlameInfo } from "../types.js";
 
-export interface AiCommitConfig { aiCommitMarkers: string[]; }
+export interface AiCommitConfig {
+  aiCommitMarkers: string[];
+  /** Glob patterns matched against file names before any metadata or Jev work is performed. */
+  artifactExclusions?: string[];
+}
 export interface CodeArtifactClassifierOptions { ambiguityMin?: number; ambiguityMax?: number; decisionLog?: DecisionLog; }
+
+export const DEFAULT_ARTIFACT_EXCLUSIONS = ["package.json", "package-lock.json", "tsconfig.json", "README*", ".gitignore", "*.config.js"];
 
 export class CodeArtifactClassifier {
   private readonly ambiguityMin: number;
@@ -19,7 +25,9 @@ export class CodeArtifactClassifier {
 
   async scan(repoPath: string, config: AiCommitConfig): Promise<CodeCleanupReport> {
     validateConfig(config);
-    const candidates = getAiTouchedFiles(repoPath, config.aiCommitMarkers);
+    assertLocalGitRepository(repoPath);
+    const exclusions = config.artifactExclusions ?? DEFAULT_ARTIFACT_EXCLUSIONS;
+    const candidates = getAiTouchedFiles(repoPath, config.aiCommitMarkers).filter((candidate) => !isExcludedArtifact(candidate.path, exclusions));
     const results: CodeArtifactResult[] = [];
     for (const candidate of candidates) {
       try { results.push(await this.classifyMetadata(await collectMetadata(repoPath, candidate.path, candidate.commitShas))); }
@@ -42,10 +50,11 @@ export async function readAiCommitConfig(configPath: string): Promise<AiCommitCo
 
 function validateConfig(config: AiCommitConfig): void {
   if (!Array.isArray(config.aiCommitMarkers) || config.aiCommitMarkers.length === 0 || !config.aiCommitMarkers.every((marker) => typeof marker === "string" && marker.trim())) throw new Error("Config must contain a non-empty aiCommitMarkers string array.");
+  if (config.artifactExclusions !== undefined && (!Array.isArray(config.artifactExclusions) || !config.artifactExclusions.every((pattern) => typeof pattern === "string" && pattern.trim()))) throw new Error("artifactExclusions must be a string array when provided.");
 }
 
 function getAiTouchedFiles(repoPath: string, markers: string[]): Array<{ path: string; commitShas: string[] }> {
-  const output = execFileSync("git", ["-C", repoPath, "log", "--name-only", "--format=%H%x1f%s"], { encoding: "utf8" });
+  const output = runGitCommand(repoPath, ["log", "--name-only", "--format=%H%x1f%s"], "reading AI-marked commits");
   const matching = markers.map((marker) => marker.toLowerCase());
   const byPath = new Map<string, string[]>(); let currentSha: string | undefined; let relevant = false;
   for (const line of output.split(/\r?\n/)) {
@@ -74,15 +83,26 @@ async function walkFiles(root: string, directory = root): Promise<string[]> {
   return found;
 }
 
-async function countReferences(repoPath: string, targetPath: string, files: string[]): Promise<number> {
+/** Counts ESM `from`, CommonJS `require`, and dynamic `import` references to a target file. */
+export async function countReferences(repoPath: string, targetPath: string, files: string[]): Promise<number> {
   const targetName = basename(targetPath).replace(/\.[^.]+$/, ""); const targetNormalized = targetPath.replace(/\\/g, "/").replace(/\.[^.]+$/, "");
-  const pattern = new RegExp(`(?:from\\s+["'][^"']*(?:${escapeRegex(targetNormalized)}|${escapeRegex(targetName)})|require\\(\\s*["'][^"']*(?:${escapeRegex(targetNormalized)}|${escapeRegex(targetName)})|import\\s*\\(\\s*["'][^"']*(?:${escapeRegex(targetNormalized)}|${escapeRegex(targetName)})`, "g");
+  const targetSpecifier = `(?:${escapeRegex(targetNormalized)}|${escapeRegex(targetName)})`;
+  const pattern = new RegExp(
+    `(?:from\\s+["'][^"']*${targetSpecifier}[^"']*["']|require\\(\\s*["'][^"']*${targetSpecifier}[^"']*["']\\s*\\)|import\\(\\s*["'][^"']*${targetSpecifier}[^"']*["']\\s*\\))`,
+    "g"
+  );
   let count = 0;
   for (const file of files) { if (file.replace(/\\/g, "/") === targetPath.replace(/\\/g, "/")) continue; try { count += (await readFile(resolve(repoPath, file), "utf8")).match(pattern)?.length ?? 0; } catch { /* ignore binary/unreadable files */ } }
   return count;
 }
 
 function getBlame(repoPath: string, path: string): GitBlameInfo {
-  try { const output = execFileSync("git", ["-C", repoPath, "blame", "--line-porcelain", "--", path], { encoding: "utf8" }); const commits = [...output.matchAll(/^([0-9a-f]{40}) /gm)].map((match) => match[1]); const author = output.match(/^author (.+)$/m)?.[1]; return { commitCount: new Set(commits).size, latestCommit: commits[0], latestAuthor: author }; } catch { return { commitCount: 0 }; }
+  const output = runGitCommand(repoPath, ["blame", "--line-porcelain", "--", path], `reading blame for '${path}'`);
+  const commits = [...output.matchAll(/^([0-9a-f]{40}) /gm)].map((match) => match[1]); const author = output.match(/^author (.+)$/m)?.[1];
+  return { commitCount: new Set(commits).size, latestCommit: commits[0], latestAuthor: author };
 }
 function escapeRegex(value: string): string { return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+function isExcludedArtifact(path: string, patterns: string[]): boolean {
+  const fileName = basename(path);
+  return patterns.some((pattern) => new RegExp(`^${escapeRegex(pattern).replace(/\\\*/g, ".*")}$`, "i").test(fileName));
+}

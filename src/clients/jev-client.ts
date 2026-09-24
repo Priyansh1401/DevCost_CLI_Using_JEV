@@ -13,7 +13,12 @@ export interface JevApiClientOptions {
   maxAttempts?: number;
 }
 
-interface JevChoiceAnswer { choice?: string; confidence?: number; }
+interface JevChoiceAnswer {
+  choice?: string;
+  confidence?: number;
+  probability?: number;
+  probabilities?: Record<string, number>;
+}
 interface JevApiResponse { answers?: Record<string, JevChoiceAnswer>; }
 
 /**
@@ -28,8 +33,8 @@ export class JevApiClient implements JevClient {
   private readonly maxAttempts: number;
 
   constructor(options: JevApiClientOptions = {}) {
-    this.apiKey = options.apiKey ?? process.env.JEV_API_KEY;
-    this.endpoint = options.endpoint ?? "https://jevtypesafeai.com/api/v1/decide";
+    this.apiKey = options.apiKey ?? process.env.TYPESAFE_API_KEY;
+    this.endpoint = options.endpoint ?? "https://api.typesafe.ai/v1/systemone";
     this.model = options.model ?? process.env.JEV_MODEL ?? "jev-latest";
     this.timeoutMs = options.timeoutMs ?? 15_000;
     this.maxAttempts = options.maxAttempts ?? 3;
@@ -37,7 +42,7 @@ export class JevApiClient implements JevClient {
 
   async ask<TAnswer>(question: string, context: Record<string, unknown>): Promise<TAnswer> {
     const choices = choicesFor(question);
-    if (!this.apiKey) return unclassified<TAnswer>("Jev unavailable: JEV_API_KEY is not set.");
+    if (!this.apiKey) return unclassified<TAnswer>("Jev unavailable: TYPESAFE_API_KEY is not set.");
     if (!choices) return unclassified<TAnswer>("Jev unavailable: no typed choices were defined for this question.");
     const body = {
       model: this.model,
@@ -53,7 +58,10 @@ export class JevApiClient implements JevClient {
         if (response.ok) {
           const result = await response.json() as JevApiResponse;
           const answer = result.answers?.decision;
-          if (answer && typeof answer.choice === "string" && typeof answer.confidence === "number" && answer.choice in choices) return { classification: answer.choice, confidence: answer.confidence } as TAnswer;
+          if (answer && typeof answer.choice === "string" && answer.choice in choices) {
+            const confidence = answer.confidence ?? answer.probability ?? answer.probabilities?.[answer.choice];
+            if (typeof confidence === "number") return { classification: answer.choice, confidence } as TAnswer;
+          }
           return unclassified<TAnswer>("Jev returned an invalid typed decision.");
         }
         lastError = `Jev HTTP ${response.status}`;

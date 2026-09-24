@@ -1,6 +1,6 @@
-import { execFileSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 import { extname } from "node:path";
+import { assertLocalGitRepository, runGitCommand } from "../git-utils.js";
 import type { LlmCallEvent, LlmProvider } from "../types.js";
 
 export interface GitChange {
@@ -41,7 +41,8 @@ export class LogScanner {
   }
 
   scanGitHistory(repoPath: string, limit = 100): GitChange[] {
-    const output = execFileSync("git", ["-C", repoPath, "log", `--max-count=${limit}`, "--name-only", "--format=%H%x1f%cI"], { encoding: "utf8" });
+    assertLocalGitRepository(repoPath);
+    const output = runGitCommand(repoPath, ["log", `--max-count=${limit}`, "--name-only", "--format=%H%x1f%cI"], "reading commit history");
     const changes: GitChange[] = [];
     let current: GitChange | undefined;
     for (const line of output.split(/\r?\n/)) {

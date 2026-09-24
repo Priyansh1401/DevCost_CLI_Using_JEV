@@ -6,19 +6,20 @@ const originalFetch = globalThis.fetch;
 afterEach(() => { globalThis.fetch = originalFetch; vi.restoreAllMocks(); });
 
 describe("production API clients", () => {
-  it("sends typed Jev choices and returns its calibrated decision", async () => {
-    const fetchMock = vi.fn().mockResolvedValue(new Response(JSON.stringify({ answers: { decision: { choice: "orphaned", confidence: 0.88 } } }), { status: 200 }));
+  it("sends the native TypeSafe System One request and returns its calibrated decision", async () => {
+    const fetchMock = vi.fn().mockResolvedValue(new Response(JSON.stringify({ answers: { decision: { choice: "orphaned", probability: 0.88 } } }), { status: 200 }));
     globalThis.fetch = fetchMock;
-    const answer = await new JevApiClient({ apiKey: "jev-test", endpoint: "https://jev.test", maxAttempts: 1 }).ask<{ classification: string; confidence: number }>("Classify this code artifact as actively-referenced, orphaned, duplicate, or safe-to-delete.", { path: "src/x.ts" });
+    const answer = await new JevApiClient({ apiKey: "typesafe-test", maxAttempts: 1 }).ask<{ classification: string; confidence: number }>("Classify this code artifact as actively-referenced, orphaned, duplicate, or safe-to-delete.", { path: "src/x.ts" });
     expect(answer).toEqual({ classification: "orphaned", confidence: 0.88 });
-    expect(fetchMock.mock.calls[0][0]).toBe("https://jev.test");
-    expect(JSON.parse(fetchMock.mock.calls[0][1].body).questions.decision.type).toBe("choice");
+    expect(fetchMock.mock.calls[0][0]).toBe("https://api.typesafe.ai/v1/systemone");
+    expect(fetchMock.mock.calls[0][1].headers.Authorization).toBe("Bearer typesafe-test");
+    expect(JSON.parse(fetchMock.mock.calls[0][1].body)).toMatchObject({ model: "jev-latest", state: { path: "src/x.ts" }, questions: { decision: { type: "choice", instructions: expect.any(String) } } });
   });
 
   it("returns an unclassified fallback when the Jev key is absent", async () => {
     const answer = await new JevApiClient({ apiKey: "", maxAttempts: 1 }).ask<{ classification: string; confidence: number; rationale: string }>("Classify this storage object as active, stale, duplicate, or safe-to-delete.", {});
     expect(answer.classification).toBe("unclassified");
-    expect(answer.rationale).toContain("JEV_API_KEY");
+    expect(answer.rationale).toContain("TYPESAFE_API_KEY");
   });
 
   it("sends an Anthropic Messages API request and extracts text", async () => {

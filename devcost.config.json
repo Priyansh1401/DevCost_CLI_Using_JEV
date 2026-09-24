@@ -1,3 +1,4 @@
 {
-  "aiCommitMarkers": ["Copilot", "Codex", "AI-generated"]
+  "aiCommitMarkers": ["Copilot", "Codex", "AI-generated"],
+  "artifactExclusions": ["package.json", "package-lock.json", "tsconfig.json", "README*", ".gitignore", "*.config.js"]
 }

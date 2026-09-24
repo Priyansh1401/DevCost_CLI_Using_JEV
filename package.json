@@ -15,6 +15,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "ai": "^7.0.109",
     "commander": "^14.0.0"
   },
   "devDependencies": {
